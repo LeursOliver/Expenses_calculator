@@ -1,0 +1,27 @@
+<section class="budget-items-section">
+    <div class="budget-item-container">
+        <div class="inkomsten-col">
+            <h3>Inkomsten</h3>
+                <div class="budget-item">
+                    <div *ngFor="let item of budgetItems">
+                        <app-budget-item-card 
+                            *ngIf="item.amount >= 0"
+                            [isInkomsten]="true" 
+                            style="margin-bottom: 20px;" 
+                            >
+                        </app-budget-item-card>                        
+                    </div>
+
+                    
+                </div>
+        </div>
+
+        <div class="uitgave-col">
+            <h3>Uitgaves</h3>
+                <div class="budget-item">
+                    <app-budget-item-card [isInkomsten]="false" style="margin-bottom: 20px;"></app-budget-item-card>
+                    <app-budget-item-card [isInkomsten]="false" style="margin-bottom: 20px;"></app-budget-item-card>
+                </div>
+        </div>
+    </div>
+</section>
